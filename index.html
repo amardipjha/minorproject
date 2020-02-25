@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Minor Project</title>
+	<link href="https://fonts.googleapis.com/css?family=Acme&display=swap" rel="stylesheet">
+	<!--font-awesome-->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<meta charset="utf-8">
+	<meta name="viewport"content="width=device-width ,initial-scale=1.0">
+	<meta name="description" content='Amar Dip Jha - called "The Computer Wizard" is 
+	developed ROLLING DICE.'>
+	<style> 
+	*{margin: 0;padding:0; text-align: center; font-family: 'Acme', sans-serif;}
+
+	h1{border-bottom:3px solid red;border-top:1px solid #00b894;
+		text-align: center;color:#ffcc00; background-color:#0000ff; text-shadow: 5px 5px white;font-size:6rem; padding:20px; letter-spacing:5px;}
+		
+	p{ text-align:center;font-size:2rem;text-shadow: 1px 1px white; color:#00b894;
+			margin: 20px 0 20px 0;}
+	.butt{margin-top: 20px;}	
+	button{
+     padding: 10px;
+     background-color:#00b894;color:white; border-radius:5px;
+	border:none; 
+	opacity: 0.9;
+      font-size: 1.5rem;
+   }
+   .dice{text-align: center;display: inline-block;margin-right: 40px;}
+
+   button:hover{background-color:#0000ff;cursor:pointer;opacity: 1;}
+
+  .footer{ margin-top:50px;background: #303036;height: 200px; position: relative; color:white;}
+  .footer .footer-bottom{height:30px;background: #343a40;color:white; position: absolute;text-align: center; padding-top:15px;bottom: 0;width: 100%}
+  .footer-content{height:200px;display: flex;color:white;}
+
+  .social-logo{
+  float:left;padding:20px;color:white;
+}
+
+.icon{
+  padding: 20px;
+  font-size: 30px;
+  width: 30px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+  border-radius: 50%;
+}
+.icon:hover{
+  opacity: 0.7;
+}
+.fa-facebook{
+  background-color: #3B5998;color:white;
+}
+.fa-linkedin{
+  background-color: #007bb5; color:white;
+}
+.fa-github{
+  background-color: black; color:white;
+}
+.fa-stack-overflow{
+	background-color: #f2f2f2;color:orange;
+}
+
+@media(min-width: 320px) and (max-width: 767px) {
+	h1{font-size:3rem; letter-spacing: 3px; text-align: center; width: 100%;}
+}
+@media (min-width: 768px)and (max-width: 912px) {
+  h1{font-size:5rem; letter-spacing:4px; }
+ }
+</style>
+
+</head>
+<body>
+   <div style="background-color: #0000ff; padding-top:5px; letter-spacing: 2px;">
+   	<marquee onmouseover="this.stop();" onmouseout="this.start();">
+    <a href="/resources/Student_Portal_User_Manual.pdf" target="_blank" 
+     style="color:white; font-weight:bold; text-decoration:none;">WELCOME TO MY CHENNAL.</a>
+     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="http://www.oistbpl.com/" target="_blank" style="text-decoration: none;font-weight: bold;color:white;"> ROLLING DICE.  .  .  .  .</a>
+    </marquee>   
+	</div>
+
+	<div class="container">
+     <h1>Rolling Dice</h1>
+        <div class="dice">
+			<p><strong>Player1</strong></p>
+			<img src="dice1.jpg" id="check1">
+		</div>
+		<div class="dice">
+			<p><strong> player2</strong></p>
+			<img src="dice2.jpg" id="check2">
+		</div>
+		<div class="butt"><button onclick="ludogame()">CLick me</button></div>
+    </div>
+<div class="footer">
+    <div class="fotter-content" style="float:left;padding-top: 20px;"> <h2><strong>Follow Us:</strong></h2>
+    	<div class="social-logo">
+    		<a href="https://www.facebook.com/amardip.jha.50" target="_blank" class=" icon fa fa-facebook"></a>
+            <a href="https://www.linkedin.com/in/mr-amardip-024921183" target="_blank" class=" icon fa fa-linkedin"></a>
+            <a href="https://www.stackoverflow.com/users/12000593/amardip?tab=profile" target="_blank" class="icon fa fa-stack-overflow">
+            </a>
+            <a href="https://www.github.com"                  target="_blank" class=" icon fa fa-github"></a>
+             
+    	</div>
+    </div>
+    <div class="footer-bottom">&copy; Copyright Reserved By Designed 2020.
+    </div>
+</div>
+    
+    <script>
+	 ludogame = () => {	
+		const play1 = Math.floor(Math.random() * 6) + 1;
+		const play1dice = "dice" + play1 + ".jpg";
+		document.getElementById('check1').setAttribute('src', play1dice);
+
+		const play2 = Math.floor(Math.random() * 6) + 1;
+		const play2dice = "dice" + play2 + ".jpg";    
+		document.getElementById('check2').setAttribute('src', play2dice);
+
+		if(play1 > play2)
+			{ document.querySelector('h1').innerHTML="Player1 won!" ;
+         }
+         else if(play2 > play1){
+         	 document.querySelector('h1').innerHTML="Player2 won!";
+         }
+         else{ 
+           document.querySelector('h1').innerHTML="Draw!" ;}
+
+     }
+	</script>
+</body>
+</html>
